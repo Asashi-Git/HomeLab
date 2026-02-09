@@ -1,0 +1,15 @@
+My HomeLab is powered by 7 physical machine:
+- First a physical router, compatible with FreeBSD, where I have installed and configured pfSense.
+	- CPU: Intel n150.
+	- RAM: 16Gb DDR5.
+	- SSD: 120Gb.
+- Then 4 mini PC with, inside every machine a Proxmox node installed that create a Proxmox Datacenter.
+	- CPU: Intel n150.
+	- RAM: 16Gb DDR5.
+	- SSD: 500Gb.
+- Then a big PC with Proxmox installed on it and integrated to the datacenter.
+	- CPU: Intel I7 7700K.
+	- RAM: 32Gb DDR4.
+	- SSD: 2 x 500Gb.
+- And finally a switch that can be managed via a web interface.
+	- Ports: 8 x 2.5Gb & 1 x 10Gb.

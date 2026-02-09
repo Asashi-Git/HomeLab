@@ -1,0 +1,1 @@
+The network inside my HomeLab is by default set on deny rule, that what we call `0 Thurst` mentality.
