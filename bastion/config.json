@@ -1,0 +1,418 @@
+{
+  "networks": [
+    {
+      "name": "Shared",
+      "cidr": "192.168.40.0/24",
+      "servers": [
+        {
+          "ip": "192.168.40.253",
+          "description": "Proxmox Node 1",
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "root",
+              "description": "Full administrative access"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.40.252",
+          "description": "Proxmox Node 2",
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "root",
+              "description": "Full administrative access"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.40.251",
+          "description": "Proxmox Node 3",
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "root",
+              "description": "Full administrative access"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.40.250",
+          "description": "Proxmox Node 4",
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "root",
+              "description": "Full administrative access"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.40.249",
+          "description": "Proxmox Node 5",
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "root",
+              "description": "Full administrative access"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "cidr": "192.168.50.0/24",
+      "servers": [
+        {
+          "ip": "192.168.50.10",
+          "description": "Jump Host (Multiple Privilege Levels) [example]",
+          "port": 2222,
+          "users": [
+            {
+              "username": "root",
+              "description": "Superuser - use with caution"
+            },
+            {
+              "username": "operator",
+              "description": "Standard operator access"
+            },
+            {
+              "username": "auditor",
+              "description": "Audit and compliance user"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DMZ",
+      "cidr": "192.168.60.0/24",
+      "servers": [
+        {
+          "ip": "192.168.60.119",
+          "description": "VPN-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.60.120",
+          "description": "VPN-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.60.80",
+          "description": "Reverse-Proxy-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.60.81",
+          "description": "Reverse-Proxy-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.60.100",
+          "description": "Load-Balancer-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.60.101",
+          "description": "Load-Balancer-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.60.200",
+          "description": "Arch-Linux-Template",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "cidr": "192.168.70.0/24",
+      "servers": [
+        {
+          "ip": "192.168.70.80",
+          "description": "WEB-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.81",
+          "description": "WEB-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.53",
+          "description": "PiWall-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.54",
+          "description": "PiWall-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.67",
+          "description": "DHCP-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.68",
+          "description": "DHCP-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.33",
+          "description": "DataBase-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.34",
+          "description": "DataBase-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-Production",
+      "cidr": "192.168.80.0/24",
+      "servers": [
+        {
+          "ip": "192.168.80.119",
+          "description": "[example]",
+          "users": [
+            {
+              "username": "sam",
+              "description": "Application deployment"
+            },
+            {
+              "username": "root",
+              "description": "Development and debugging"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SOC",
+      "cidr": "192.168.90.0/24",
+      "servers": [
+        {
+          "ip": "192.168.90.69",
+          "description": "Zabbix-1",
+          "users": [
+            {
+              "username": "sam",
+              "description": "Application deployment"
+            },
+            {
+              "username": "root",
+              "description": "Development and debugging"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
