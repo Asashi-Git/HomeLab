@@ -260,7 +260,7 @@
         },
         {
           "ip": "192.168.70.53",
-          "description": "PiWall-1",
+          "description": "DNS-1",
           "port": 42069,
           "users": [
             {
@@ -279,7 +279,45 @@
         },
         {
           "ip": "192.168.70.54",
-          "description": "PiWall-2",
+          "description": "DNS-2",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.55",
+          "description": "AdGuard-1",
+          "port": 42069,
+          "users": [
+            {
+              "username": "sam",
+              "description": "[root]"
+            },
+            {
+              "username": "marc",
+              "description": "[root]"
+            },
+            {
+              "username": "max",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
+          "ip": "192.168.70.56",
+          "description": "AdGuard-2",
           "port": 42069,
           "users": [
             {
