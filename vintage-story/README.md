@@ -8,86 +8,122 @@ This document lists commonly used commands for administering a Vintage Story ser
 ## Basic Server Commands
 
 **Show help**
-/help
+```
+~/server/server.sh help
+```
 
 **List connected players**
-/list
+```
+~/server/server.sh command "/list"
+```
 
 **Stop the server**
-/stop
+```
+~/server/server.sh stop
+```
 
 **Save the world**
-/savegame save
+```
+~/server/server.sh command "/savegame save"
+```
 
 **Create a backup**
-/savegame createbackup
+```
+~/server/server.sh command "/savegame createbackup"
+```
 
 ---
 
 ## Player Management
 
 **Kick a player**
-/kick <username>
+```
+~/server/server.sh command "/kick <username>"
+```
 
 Example:
 /kick PlayerName
 
 **Ban a player**
-/ban <username>
+```
+~/server/server.sh command "/ban <username>"
+```
 
 **Unban a player**
-/unban <username>
+```
+~/server/server.sh command "/unban <username>"
+```
 
 **Ban an IP**
-/banip <ip-address>
+```
+~/server/server.sh command "/banip <ip-address>"
+```
 
 **List banned players**
-/banlist
+```
+~/server/server.sh command "/banlist"
+```
 
 ---
 
 ## Whitelist Management
 
 **Enable whitelist**
-/whitelist on
+```
+~/server/server.sh command "/whitelist on"
+```
 
 **Disable whitelist**
-/whitelist off
+```
+~/server/server.sh command "/whitelist off"
+```
 
 **Add player to whitelist**
-/whitelist add <username>
+```
+~/server/server.sh command "/whitelist add <username>"
+```
 
 Example:
 /whitelist add PlayerName
 
 **Remove player from whitelist**
-/whitelist remove <username>
+```
+~/server/server.sh command "/whitelist remove <username>"
+```
 
 ---
 
 ## Player Permissions
 
 **Grant admin role**
-/player <username> role admin
+```
+~/server/server.sh command "/player <username> role admin"
+```
 
 Example:
 /player PlayerName role admin
 
 **Remove admin role**
-/player <username> role player
+```
+~/server/server.sh command "/player <username> role player"
+```
 
 ---
 
 ## Teleportation
 
 **Teleport yourself**
+```
 /tp <x> <y> <z>
+```
 
 Example:
 /tp 100 80 200
 
 **Teleport to another player**
+```
 /tp <player1> <player2>
+```
 
 Example:
 /tp PlayerA PlayerB
@@ -97,39 +133,53 @@ Example:
 ## Time Control
 
 **Set time of day**
+```
 /time set <value>
+```
 
 Example:
 /time set 0.5
 
 **Speed up or slow down time**
+```
 /time speed <value>
+```
 
 ---
 
 ## Weather
 
 **Set weather**
+```
 /weather set <type>
+```
 
 Example:
 /weather set rain
 
 **Clear weather**
+```
 /weather set clear
+```
 
 ---
 
 ## Debug / Utility
 
 **Show server info**
+```
 /serverinfo
+```
 
 **Show performance statistics**
+```
 /debug perf
+```
 
 **Reload server configs**
-/reload
+```
+~/server/server.sh reload
+```
 
 ---
 
