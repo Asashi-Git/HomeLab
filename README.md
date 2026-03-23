@@ -171,6 +171,9 @@ This homelab aims to:
 ---
 ## Assets Configuration
 
+#### Physical Assets
+
+- Assets.
 #### DMZ
 
 - [Bastion](https://github.com/Asashi-Git/HomeLab/tree/main/bastion).
