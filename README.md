@@ -5,6 +5,7 @@ This homelab is designed as a **highly available, segmented, and production-like
 
 The infrastructure is built on a **Proxmox virtualization cluster (5 nodes)**, which hosts the majority of virtual machines. Network segmentation is enforced using **VLANs and pfSense firewalls**, isolating each functional zone to improve **security, control, and resilience**.
 
+---
 ## Core Concepts
 
 **I built this homelab as a shared training environment for myself and two of my friends, with the goal of developing our skills in cybersecurity, especially in Red Teaming (pentesting).** It provides a fully controlled and legal infrastructure where we can safely practice offensive security techniques.
@@ -86,6 +87,7 @@ This homelab aims to:
 - Simulate **production-grade services and architectures**
 - Build hands-on expertise in **networking, virtualization, and security**
 
+---
 ## Assets & Network
 
 #### Shared Network
@@ -166,7 +168,7 @@ This homelab aims to:
 | SIEM 1                       | Debian     | 192.168.90.50  | None        | Vlan 90 | Wazuh          | Yes         | Monitoring                                             |
 | SIEM 2                       | Debian     | 192.168.90.51  | None        | Vlan 90 | Wazuh          | Yes         | Monitoring                                             |
 
-
+---
 ## Assets Configuration
 
 #### DMZ
