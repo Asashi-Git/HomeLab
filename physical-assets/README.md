@@ -62,7 +62,7 @@ A managed switch provides **layer 2 segmentation and VLAN enforcement** across t
     - 1 × 10 GbE
 - **Management:** Web interface
 - **Configured VLANs:**  
-    `40, 50, 60, 70, 80, 90, 100, 150, 200, 250`
+    `40, 50, 60, 70, 80, 90, 100, 150, 200, 210, 250, 255`
 
 Ensures proper **traffic isolation** between:
 

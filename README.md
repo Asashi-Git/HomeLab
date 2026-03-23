@@ -127,7 +127,7 @@ This homelab aims to:
 
 #### Production Network
 
-| Network                          | OS                  | IP Address     | MAC Address                | VLAN    | Techno Used    | Virtualized | Purpose                                |
+| Network 192.168.70.0/24          | OS                  | IP Address     | MAC Address                | VLAN    | Techno Used    | Virtualized | Purpose                                |
 | -------------------------------- | ------------------- | -------------- | -------------------------- | ------- | -------------- | ----------- | -------------------------------------- |
 | LAN pfSense Production interface | FreeBSD             | 192.168.70.254 | None                       | Vlan 70 | pfSense Web UI | No          | Network and Firewall                   |
 | Web 1                            | Arch Linux          | 192.168.70.80  | fe80::be24:11ff:fe61:173d  | Vlan 70 | Apache         | Yes         | Store the Website shared with the word |
@@ -144,7 +144,7 @@ This homelab aims to:
 
 #### Pre-Production Network
 
-| Network                              | OS      | IP Address                        | MAC Address | VLAN    | Techno Used    | Virtualized | Purpose              |
+| Network 192.168.80.0/24              | OS      | IP Address                        | MAC Address | VLAN    | Techno Used    | Virtualized | Purpose              |
 | ------------------------------------ | ------- | --------------------------------- | ----------- | ------- | -------------- | ----------- | -------------------- |
 | LAN pfSense Pre-Production interface | FreeBSD | 192.168.80.254                    | None        | Vlan 80 | pfSense Web UI | No          | Network and Firewall |
 | WAN pfSense Pre-Production interface | FreeBSD | 192.168.80.249 VIP 192.168.80.250 | None        | Vlan 80 | pfSense Web UI | Yes         | Network and Firewall |
@@ -152,7 +152,7 @@ This homelab aims to:
 
 #### SOC Network
 
-| Network                      | OS         | IP Address     | MAC Address | VLAN    | Techno Used    | Virtualized | Purpose                                                |
+| Network 192.168.90.0/24      | OS         | IP Address     | MAC Address | VLAN    | Techno Used    | Virtualized | Purpose                                                |
 | ---------------------------- | ---------- | -------------- | ----------- | ------- | -------------- | ----------- | ------------------------------------------------------ |
 | LAN pfSense SOC interface    | FreeBSD    | 192.168.90.254 | None        | Vlan 90 | pfSense Web UI | No          | Network and Firewall                                   |
 | Monitoring 1                 | Arch Linux | 192.168.90.69  | None        | Vlan 90 | Zabbix         | Yes         | Used to monitor the HomeLab                            |
@@ -167,6 +167,43 @@ This homelab aims to:
 | SOAR 1                       | Arch Linux | 192.168.90.31  | None        | Vlan 90 | Shuffle        | Yes         | Automate and streamline response to security incidents |
 | SIEM 1                       | Debian     | 192.168.90.50  | None        | Vlan 90 | Wazuh          | Yes         | Monitoring                                             |
 | SIEM 2                       | Debian     | 192.168.90.51  | None        | Vlan 90 | Wazuh          | Yes         | Monitoring                                             |
+
+#### Pre-Production Admin Sub Network
+
+| Network 192.168.100.0/24        | OS         | IP Address                          | MAC Address | VLAN     | Techno Used    | Virtualized | Purpose              |
+| ------------------------------- | ---------- | ----------------------------------- | ----------- | -------- | -------------- | ----------- | -------------------- |
+| LAN pfSense Pre-Admin interface | FreeBSD    | 192.168.100.253 VIP 192.168.100.254 | None        | Vlan 100 | pfSense Web UI | Yes         | Network and Firewall |
+| LAN pfSense Pre-Admin interface | FreeBSD    | 192.168.100.252 VIP 192.168.100.254 | None        | Vlan 100 | pfSense Web UI | Yes         | Network and Firewall |
+| NAS                             | Arch Linux | 192.168.100.22                      |             | Vlan 100 | SCP            | Yes         | Store Data/logs      |
+
+#### Pre-Production Prod Sub Network
+
+| Network 192.168.150.0/24       | OS                  | IP Address                          | MAC Address | VLAN     | Techno Used    | Virtualized | Purpose              |
+| ------------------------------ | ------------------- | ----------------------------------- | ----------- | -------- | -------------- | ----------- | -------------------- |
+| LAN pfSense Pre-Prod interface | FreeBSD             | 192.168.150.253 VIP 192.168.150.254 | None        | Vlan 150 | pfSense Web UI | Yes         | Network and Firewall |
+| LAN pfSense Pre-Prod interface | FreeBSD             | 192.168.150.252 VIP 192.168.150.254 | None        | Vlan 150 | pfSense Web UI | Yes         | Network and Firewall |
+| Pre Web                        | Arch Linux          | 192.168.150.80                      | None        | Vlan 150 | Apache         | Yes         | Web testing          |
+| Pre WS                         | Windows Server 2025 | 192.168.150.88                      | None        | Vlan 150 | ADDS DNS       | Yes         | WS testing           |
+| Pre DHCP                       | Arch Linux          | 192.168.150.67                      | None        | Vlan 150 | DHCPD          | Yes         | DHCP testing         |
+
+#### Pre-Production School Sub Network
+
+| Network 192.168.200.0/24 192.168.210.0/24 | OS      | IP Address                          | MAC Address | VLAN     | Techno Used    | Virtualized | Purpose              |
+| ----------------------------------------- | ------- | ----------------------------------- | ----------- | -------- | -------------- | ----------- | -------------------- |
+| WAN pfSense Pre-School interface          | FreeBSD | 192.168.200.249 VIP 192.168.200.250 | None        | Vlan 200 | pfSense Web UI | Yes         | Network and Firewall |
+| WAN pfSense Pre-School interface          | FreeBSD | 192.168.200.248 VIP 192.168.200.250 | None        | Vlan 200 | pfSense Web UI | Yes         | Network and Firewall |
+| LAN pfSense Pre-School interface          | FreeBSD | 192.168.210.249 VIP 192.168.210.254 | None        | Vlan 210 | pfSense Web UI | Yes         | Network and Firewall |
+| LAN pfSense Pre-School interface          | FreeBSD | 192.168.210.248 VIP 192.168.210.254 | None        | Vlan 210 | pfSense Web UI | Yes         | Network and Firewall |
+
+#### Pre-Production Cybersecurity Sub Network
+
+| Network 192.168.250.0/24 192.168.255.0/24 | OS      | IP Address                          | MAC Address | VLAN     | Techno Used    | Virtualized | Purpose              |
+| ----------------------------------------- | ------- | ----------------------------------- | ----------- | -------- | -------------- | ----------- | -------------------- |
+| WAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.250.249 VIP 192.168.250.250 | None        | Vlan 250 | pfSense Web UI | Yes         | Network and Firewall |
+| WAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.250.248 VIP 192.168.250.250 | None        | Vlan 250 | pfSense Web UI | Yes         | Network and Firewall |
+| LAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.255.249 VIP 192.168.255.254 | None        | Vlan 255 | pfSense Web UI | Yes         | Network and Firewall |
+| LAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.255.248 VIP 192.168.255.254 | None        | Vlan 255 | pfSense Web UI | Yes         | Network and Firewall |
+
 
 ---
 ## Assets Configuration
