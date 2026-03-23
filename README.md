@@ -173,7 +173,7 @@ This homelab aims to:
 
 #### Physical Assets
 
-- Assets.
+- [Assets](https://github.com/Asashi-Git/HomeLab/tree/main/physical-assets).
 #### DMZ
 
 - [Bastion](https://github.com/Asashi-Git/HomeLab/tree/main/bastion).
