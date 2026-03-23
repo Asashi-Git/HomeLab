@@ -171,5 +171,5 @@ This homelab aims to:
 
 #### DMZ
 
-- [[HomeLab/bastion/README|README]].
+- [Bastion](https://github.com/Asashi-Git/HomeLab/tree/main/bastion).
 - VPN.
