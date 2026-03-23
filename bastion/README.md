@@ -163,3 +163,7 @@ It turns the bastion host into:
 
 
 ---
+
+### Annexe
+
+- Configuration.
