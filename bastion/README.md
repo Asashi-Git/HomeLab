@@ -1,152 +1,165 @@
 
-# SSH Menu – HomeLab Bastion Interface
+## SSH Bastion Menu (ssh_menu.py)
 
-## Purpose
+### Role in the HomeLab
 
-This script was created to solve a **real operational problem in a HomeLab environment**:  
-managing multiple servers, networks, and access methods efficiently **without relying on memory, scattered notes, or complex SSH configs**.
+Within this HomeLab, the `ssh_menu.py` script is a **core access component of the bastion hosts** deployed in multiple networks (DMZ and SOC).
 
-In a typical HomeLab, you often have:
+It is **not a convenience tool**, but a **critical interface** designed to manage and secure how users access the infrastructure.
 
-- Multiple networks (LAN, VLANs, VPN, DMZ…)
-- Dozens of machines (VMs, containers, hypervisors, services)
-- Different users and authentication methods (passwords, SSH keys)
-- Non-standard ports and jump hosts
+In an environment with:
 
-Over time, this becomes **hard to track, error-prone, and slow**.
+- Multiple VLANs (DMZ, Production, SOC, Admin…)
+- Dozens of servers (50+ assets)
+- Redundant systems (HA pairs)
+- Different access methods (SSH keys, users, ports)
 
-This script turns your terminal into a **structured SSH bastion menu**, acting as a **single entry point to your entire infrastructure**.
+Direct SSH access quickly becomes **unmanageable, error-prone, and unsafe**.
 
----
-
-## Why this script exists
-
-Instead of:
-
-- Memorizing IP addresses
-- Writing long SSH commands
-- Maintaining a messy `~/.ssh/config`
-- Copy-pasting from notes or dashboards
-
-You get:
-
-A **centralized, human-readable configuration**  
-A **clean interactive interface (TUI)**  
-**Consistent access workflow** across all servers  
-**Reduced mistakes** (wrong user, wrong port, wrong key)  
-**Multi-user support** for shared environments  
+This script solves that by acting as a **controlled SSH entry point**.
 
 ---
 
-## HomeLab Use Case
+### Why this script exists in *this* HomeLab
 
-This script acts as a **lightweight bastion host interface**.
+This HomeLab is built for:
 
-### Typical workflow:
+- **Cybersecurity training (Red Team / Pentest)**
+- **Enterprise simulation**
+- **Multi-user usage (shared lab)**
 
-1. You SSH into your HomeLab entry machine (or open a terminal locally)
-2. Run:
+Because of that, access needs to be:
 
-```bash
-./ssh_meny.py
-```
-
-3. Navigate through:
-    
-    - Network → Server → User
-4. The script automatically:
-    
-    - Builds the correct SSH command
-    - Applies the right port
-    - Uses the correct authentication method (key/password)
-    - Connects you instantly
+- Structured
+- Predictable
+- Controlled
+- Easy to use under pressure (during exercises)
 
 ---
 
-## What problem it actually solves
+### The Problem Without It
 
-### Without this script
+In this infrastructure, a user would otherwise need to:
 
-```bash
-ssh -i ~/.ssh/prod_key -p 2222 admin@192.168.10.42
-```
+- Remember dozens of IP addresses across VLANs
+- Know which user to use per machine
+- Know which port is exposed (especially through DMZ/bastion)
+- Use the correct SSH key every time
+- Avoid mistakes while pivoting between networks
 
-- Easy to forget
-- Hard to scale
-- Painful with many hosts
+This becomes especially problematic during:
+
+- **Pentest scenarios**
+- **Lateral movement simulations**
+- **SOC investigations**
+- **Multi-user sessions**
 
 ---
 
-### With this script
+### What the Bastion Menu Solves
 
-You just navigate:
+The script transforms SSH access into a **guided and structured workflow**:
 
 ```
-[Production Network]
-  → [Web Server]
-    → [admin]
-```
+Network → Server → User → Connect
+````
 
-Done. No thinking required.
+It provides:
 
----
-
-## Design Philosophy
-
-This is **not a toy or demo UI**.  
-It is built with real HomeLab constraints in mind:
-
-- **Offline-first** (no external dependencies)
-- **Simple JSON config**
-- **Terminal-native (curses)**
-- **Fast and lightweight**
-- **Easily extensible**
+- Centralized access to all assets
+- Clear separation by network (DMZ, Prod, SOC…)
+- Explicit user selection (avoids privilege mistakes)
+- Automatic handling of:
+  - Ports
+  - SSH keys
+  - Usernames
+- Reduced cognitive load during operations
 
 ---
 
-## Why not just use ~/.ssh/config?
+### Architectural Role
 
-Good question — and intentional.
+The script is deployed on:
 
-While `~/.ssh/config` is powerful, it:
-
-- Becomes hard to read at scale
-- Lacks hierarchy (networks, grouping)
-- Is not user-friendly for non-experts
-- Doesn’t provide interactive selection
-- Doesn’t enforce structured validation
-
-This script adds a **layer of organization and usability on top of SSH**.
-
----
-
-## Multi-User Context
-
-In shared HomeLab or team setups:
-
-- Different users may have different credentials
-- Some servers require specific accounts
-- Keys may vary per environment
-
-This script allows:
-
-- Clear user descriptions
-- Explicit authentication methods
-- Safer and more predictable access
-
----
-
-## Summary
-
-This script exists to:
-
-> **Turn a chaotic HomeLab SSH experience into a clean, structured, and reliable access system.**
+- **DMZ Bastions** → Entry point from outside / VPN
+- **SOC Bastions** → Controlled access to monitoring & security systems
 
 It acts as:
 
-- A **bastion menu**
-- A **navigation layer for your infrastructure**
-- A **productivity tool**
-- A **mistake-prevention system**
+> A **human-friendly access layer on top of SSH**, enforcing structure without adding heavy infrastructure.
+
+---
+
+### Security Perspective
+
+From a security standpoint, this script:
+
+- Reduces human errors (wrong target, wrong credentials)
+- Standardizes access patterns
+- Prevents ad-hoc and uncontrolled SSH usage
+- Encourages use of bastion hosts instead of direct access
+
+It complements:
+
+- pfSense (network filtering)
+- VLAN segmentation
+- VPN access
+- IDS / SIEM monitoring
+
+---
+
+### Multi-User Context
+
+Since the lab is shared:
+
+- Users may not know the full infrastructure
+- Not all users should access everything the same way
+- Mistakes can impact other users’ sessions
+
+The menu ensures:
+
+- A **consistent interface for everyone**
+- A **lower learning curve**
+- Safer collaboration during exercises
+
+---
+
+### In Practice
+
+Instead of running:
+
+```bash
+ssh -i ~/.ssh/prod_key -p 2222 admin@192.168.70.80
+````
+
+Users simply:
+
+```bash
+python3 ssh_menu.py
+```
+
+And navigate the infrastructure interactively.
+
+---
+
+### Summary
+
+This script exists because:
+
+> **In a complex, segmented, and shared HomeLab, SSH access must be structured, guided, and reliable / not manual.**
+
+It turns the bastion host into:
+
+- A navigation system
+- An access control helper
+- A productivity tool
+- A safety layer
+
+---
+
+### In One sentence
+
+**This script is the bridge between a complex infrastructure and a usable one.**
+
 
 ---
