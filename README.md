@@ -90,6 +90,13 @@ This homelab aims to:
 ---
 ## Assets & Network
 
+#### Physical pfSense Router
+
+| Network                     | OS      | IP Address     | MAC Address       | Vlan | Techno Used    | Virtualized | Purpose              |
+| --------------------------- | ------- | -------------- | ----------------- | ---- | -------------- | ----------- | -------------------- |
+| WAN pfSense 192.168.0.0/24  | FreeBSD | 192.168.0.250  | a8:b8:e0:07:83:3e | None | pfSense Web UI | No          | Network and Firewall |
+| LAN pfSense 192.168.35.0/24 | FreeBSD | 192.168.35.254 | a8:b8:e0:07:83:3d | None | pfSense Web UI | No          | Network and Firewall |
+
 #### Shared Network
 
 | Network 192.168.40.0/24      | OS      | IP Address     | MAC Address | Vlan    | Techno Used    | Virtualized | Purpose                               |
@@ -140,7 +147,6 @@ This homelab aims to:
 | DHCP 2                           | Arch Linux          | 192.168.70.68  |                            | Vlan 70 | DHCPD          | Yes         | Used as the DHCP of the HomeLab        |
 | DataBase 1                       | Arch Linux          | 192.168.70.33  | fe80::be24:11ff:febd:3f6f  | Vlan 70 | MariaDB        | Yes         | Used as the Data Base of the HomeLab   |
 | DataBase 2                       | Arch Linux          | 192.168.70.34  |                            | Vlan 70 | MariaDB        | Yes         | Used as the Data Base of the HomeLab   |
-
 
 #### Pre-Production Network
 
@@ -203,7 +209,6 @@ This homelab aims to:
 | WAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.250.248 VIP 192.168.250.250 | None        | Vlan 250 | pfSense Web UI | Yes         | Network and Firewall |
 | LAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.255.249 VIP 192.168.255.254 | None        | Vlan 255 | pfSense Web UI | Yes         | Network and Firewall |
 | LAN pfSense Pre-Cybersecurity interface   | FreeBSD | 192.168.255.248 VIP 192.168.255.254 | None        | Vlan 255 | pfSense Web UI | Yes         | Network and Firewall |
-
 
 ---
 ## Assets Configuration
