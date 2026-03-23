@@ -72,7 +72,7 @@ git push --force origin main
 
 Hello word !
 
-git remote set-url origin [git@github.com](mailto:git@github.com):Asashi-Git/JobPrep-AI.git
+git remote set-url origin git@github.com:Asashi-Git/JobPrep-AI.git
 
 git remote -v
 
