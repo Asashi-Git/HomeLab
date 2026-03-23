@@ -25,6 +25,7 @@ The infrastructure is built on a **Proxmox virtualization cluster (5 nodes)**, w
     - Production
     - Pre-production
     - SOC (security operations)
+
 - **Defense in Depth**  
     Security is enforced through multiple layers: firewalls (pfSense), reverse proxies, bastions, VPN access, IDS (Suricata), and SIEM (Wazuh).
     
@@ -36,9 +37,11 @@ The infrastructure is built on a **Proxmox virtualization cluster (5 nodes)**, w
 - **Hypervisor Layer**
     
     - 5 Proxmox nodes forming the virtualization backbone
+
 - **Firewall & Routing**
     
     - pfSense instances per network (VLAN-based segmentation)
+
 - **Access & Exposure Layer (DMZ)**
     
     - Load balancers (Nginx)
@@ -46,6 +49,7 @@ The infrastructure is built on a **Proxmox virtualization cluster (5 nodes)**, w
     - VPN gateways (WireGuard)
     - Bastion hosts (controlled SSH access)
     - Mail servers (Postfix)
+
 - **Production Services**
     
     - Web servers (Apache)
@@ -53,9 +57,11 @@ The infrastructure is built on a **Proxmox virtualization cluster (5 nodes)**, w
     - External DNS (AdGuard)
     - DHCP services
     - Databases (MariaDB)
+
 - **Pre-Production**
     
     - Isolated environment for testing with HA pfSense setup
+
 - **SOC (Security Operations Center)**
     
     - Monitoring (Zabbix)
@@ -64,6 +70,7 @@ The infrastructure is built on a **Proxmox virtualization cluster (5 nodes)**, w
     - SOAR (Shuffle)
     - Threat Intelligence platform
     - Dedicated bastion access
+
 - **Administration**
     
     - Secure admin workstation (Arch Linux)
@@ -79,7 +86,7 @@ This homelab aims to:
 - Simulate **production-grade services and architectures**
 - Build hands-on expertise in **networking, virtualization, and security**
 
-## Assets/Network Picture
+## Assets & Network
 
 #### Shared Network
 
@@ -159,3 +166,10 @@ This homelab aims to:
 | SIEM 1                       | Debian     | 192.168.90.50  | None        | Vlan 90 | Wazuh          | Yes         | Monitoring                                             |
 | SIEM 2                       | Debian     | 192.168.90.51  | None        | Vlan 90 | Wazuh          | Yes         | Monitoring                                             |
 
+
+## Assets Configuration
+
+#### DMZ
+
+- [[HomeLab/bastion/README|README]].
+- VPN.
