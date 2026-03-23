@@ -204,6 +204,17 @@
           ]
         },
         {
+          "ip": "192.168.60.220",
+          "description": "Vintage-Story",
+          "port": 42069,
+          "users": [
+            {
+              "username": "gamemaster",
+              "description": "[root]"
+            }
+          ]
+        },
+        {
           "ip": "192.168.60.200",
           "description": "Arch-Linux-Template",
           "port": 42069,
@@ -260,44 +271,6 @@
         },
         {
           "ip": "192.168.70.53",
-          "description": "DNS-1",
-          "port": 42069,
-          "users": [
-            {
-              "username": "sam",
-              "description": "[root]"
-            },
-            {
-              "username": "marc",
-              "description": "[root]"
-            },
-            {
-              "username": "max",
-              "description": "[root]"
-            }
-          ]
-        },
-        {
-          "ip": "192.168.70.54",
-          "description": "DNS-2",
-          "port": 42069,
-          "users": [
-            {
-              "username": "sam",
-              "description": "[root]"
-            },
-            {
-              "username": "marc",
-              "description": "[root]"
-            },
-            {
-              "username": "max",
-              "description": "[root]"
-            }
-          ]
-        },
-        {
-          "ip": "192.168.70.55",
           "description": "AdGuard-1",
           "port": 42069,
           "users": [
@@ -316,7 +289,7 @@
           ]
         },
         {
-          "ip": "192.168.70.56",
+          "ip": "192.168.70.54",
           "description": "AdGuard-2",
           "port": 42069,
           "users": [
