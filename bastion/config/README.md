@@ -1,4 +1,3 @@
-
 # Annexe – Bastion Hardening (User & SSH Configuration)
 
 To securely integrate this script into the infrastructure, a **dedicated service account** named `jumphost` has been created.

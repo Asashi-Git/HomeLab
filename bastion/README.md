@@ -1,5 +1,4 @@
-
-## SSH Bastion Menu (ssh_menu.py)
+# SSH Bastion Menu (ssh_menu.py)
 
 ### Role in the HomeLab
 
@@ -166,4 +165,6 @@ It turns the bastion host into:
 
 ### Annexe
 
-- Configuration.
+- [Configuration](https://github.com/Asashi-Git/HomeLab/tree/main/bastion/config).
+
+---
