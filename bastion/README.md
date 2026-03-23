@@ -166,5 +166,6 @@ It turns the bastion host into:
 ### Annexe
 
 - [Configuration](https://github.com/Asashi-Git/HomeLab/tree/main/bastion/config).
+- [Script](https://github.com/Asashi-Git/HomeLab/blob/main/bastion/script/ssh_menu.py).
 
 ---
