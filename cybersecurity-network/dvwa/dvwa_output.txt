@@ -1,0 +1,52 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dvwa_output.txt
+START_TIME: Tue Apr 14 00:50:39 2026
+URL_BASE: http://dvwa-1.homelab.local/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+SPEED_DELAY: 50 miliseconds
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://dvwa-1.homelab.local/ ----
++ http://dvwa-1.homelab.local/.git/HEAD (CODE:200|SIZE:23)
++ http://dvwa-1.homelab.local/~bin (CODE:403|SIZE:984)
++ http://dvwa-1.homelab.local/~ftp (CODE:403|SIZE:984)
++ http://dvwa-1.homelab.local/~http (CODE:403|SIZE:984)
++ http://dvwa-1.homelab.local/~mail (CODE:403|SIZE:984)
++ http://dvwa-1.homelab.local/~nobody (CODE:403|SIZE:984)
++ http://dvwa-1.homelab.local/~root (CODE:403|SIZE:984)
++ http://dvwa-1.homelab.local/cgi-bin/ (CODE:403|SIZE:998)
+==> DIRECTORY: http://dvwa-1.homelab.local/config/
+==> DIRECTORY: http://dvwa-1.homelab.local/database/
+==> DIRECTORY: http://dvwa-1.homelab.local/docs/
+==> DIRECTORY: http://dvwa-1.homelab.local/external/
++ http://dvwa-1.homelab.local/favicon.ico (CODE:200|SIZE:1406)
++ http://dvwa-1.homelab.local/index.php (CODE:302|SIZE:0)
++ http://dvwa-1.homelab.local/php.ini (CODE:200|SIZE:154)
++ http://dvwa-1.homelab.local/phpinfo.php (CODE:302|SIZE:0)
++ http://dvwa-1.homelab.local/robots.txt (CODE:200|SIZE:25)
+==> DIRECTORY: http://dvwa-1.homelab.local/tests/
+
+---- Entering directory: http://dvwa-1.homelab.local/config/ ----
+
+---- Entering directory: http://dvwa-1.homelab.local/database/ ----
+
+---- Entering directory: http://dvwa-1.homelab.local/docs/ ----
+==> DIRECTORY: http://dvwa-1.homelab.local/docs/graphics/
+
+---- Entering directory: http://dvwa-1.homelab.local/external/ ----
+
+---- Entering directory: http://dvwa-1.homelab.local/tests/ ----
+
+---- Entering directory: http://dvwa-1.homelab.local/docs/graphics/ ----
+
+-----------------
+END_TIME: Tue Apr 14 01:19:24 2026
+DOWNLOADED: 32284 - FOUND: 13
