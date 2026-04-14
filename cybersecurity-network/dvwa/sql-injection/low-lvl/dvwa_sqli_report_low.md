@@ -114,14 +114,6 @@ Table: users
 +---------+--------+---------+-----------------------------+---------------------------------------------+-----------+------------+---------------------+--------------+-----------------+
 ```
 
-| User    | Password |
-| ------- | -------- |
-| admin   | password |
-| gordonb | abc123   |
-| 1337    | charley  |
-| pablo   | letmein  |
-| smithy  | password |
-
 ### Notes
 
 - Passwords were stored as **unsalted MD5 hashes**
