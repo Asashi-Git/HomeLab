@@ -141,6 +141,16 @@ git push --force origin main
 - Can break your team’s work
 - Only use if you **fully understand the impact**
 
+ --- 
+ 
+## 10. Discard a modification 
+
+```bash
+git checkout -- .your_modification
+```
+
+If your changes are irrelevant, you can discard them.
+
 ---
 
 ## Best Practices
