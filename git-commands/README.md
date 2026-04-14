@@ -99,6 +99,7 @@ Visualizes your commit history as a graph (very useful for debugging branches)
 ### Set identity
 
 ```bash
+ssh-keygen -t ed25519 -C "your@email.com"
 git config --global user.name "YourName"
 git config --global user.email "your@email.com"
 ```
