@@ -21,7 +21,7 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Referer: http://dvwa-1.homelab.local/vulnerabilities/sqli/
 Accept-Encoding: gzip, deflate, br
-Cookie: PHPSESSID=6ccba7a978f66dd1e679352c30638458; security=low
+Cookie: PHPSESSID=6ccba7a978f66dd1e679352c30638458; security=medium
 Connection: keep-alive
 ```
 
