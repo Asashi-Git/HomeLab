@@ -1,4 +1,4 @@
-# DVWA SQL Injection Report Level Low
+# DVWA SQL Injection Report Level Medium
 
 ## Overview
 
